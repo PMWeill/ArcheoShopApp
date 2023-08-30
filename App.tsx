@@ -18,10 +18,10 @@ import {
 } from 'react-native';
 import { articles } from './articles.js';
 import { MenuContext } from './MenuContext.js';
-import { BoutiqueContext } from './BoutiqueContext.js';
-import NavMenu from './components/NavMenu/NavMenu.js';
-import { Boutique } from './components/Boutique/Boutique.jsx';
-
+import  {BoutiqueContext}  from './BoutiqueContext.js';
+import {NavMenu} from './components/NavMenu/NavMenu.js';
+import  {Boutique}  from './components/Boutique/Boutique.jsx';
+import { Panier } from './components/Panier/Panier.jsx';
 
 function App(): JSX.Element {
   const [stateArticles, setStateArticles] = useState(
@@ -163,6 +163,7 @@ function App(): JSX.Element {
             
               
               <Boutique articles={stateArticles.articles}></Boutique>
+              <Panier></Panier>
             </View >
           </ScrollView>
 
@@ -183,4 +184,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export {App};

@@ -1,4 +1,4 @@
 import { createContext } from "react";
+const BoutiqueContext = createContext();
 
-
-export const BoutiqueContext = createContext();
+export {BoutiqueContext};

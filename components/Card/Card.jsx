@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import BoutiqueContext from '../../BoutiqueContext';
+import {BoutiqueContext} from '../../BoutiqueContext';
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { Image, StyleSheet, View } from 'react-native';
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
@@ -50,7 +50,7 @@ const stylesCard = StyleSheet.create({
 
   },
 });
-export default MyCard;
+export {MyCard};
 
 
 

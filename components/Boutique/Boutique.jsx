@@ -1,7 +1,7 @@
 
 
 import { StyleSheet, View , Text } from 'react-native';
-import MyCard from "../Card/Card";
+import {MyCard} from "../Card/Card";
 const stylesBoutique = StyleSheet.create({
     shop: {
         display: "flex",

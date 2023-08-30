@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "./Panier.css";
+
 import { BoutiqueContext } from "../../BoutiqueContext";
 import { MenuContext } from "../../MenuContext";
 import { Text, View } from "react-native";
@@ -27,11 +27,7 @@ const Panier = () => {
         <View className="backPanier">
             <View className="panier">
                 <Text>Votre panier</Text>
-                <View className="close" onClick={
-                    () => {
-                        menuContext.fonctDisplayPanier(menuContext.displayPanier)
-                    }
-                }>X</View>
+                
 
                 <View>
                     <Text>
@@ -89,4 +85,4 @@ const Panier = () => {
         </View>
     )
 }
-export { Panier }
+export { Panier };
