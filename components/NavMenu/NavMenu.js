@@ -5,12 +5,23 @@ import { Button, Menu, Divider, PaperProvider } from 'react-native-paper';
 // import { fabars } from '@fortawesome/free-solid-svg-icons/fabars'
 const stylesCSS = StyleSheet.create({
   bgMenu: {
-    paddingTop: 30,
+    zIndex:1,
+    position:"relative",
+    paddingTop: 10,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    height: 250,
+    justifyContent: 'space-between',
     backgroundColor:"gray"
-  }
+  },
+  SousMenu: {
+    zIndex:2,
+    top:0,
+    position:"absolute",
+    paddingTop: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 250
+  },
+ 
 });
 
 const NavMenu = () => {
@@ -25,7 +36,7 @@ const NavMenu = () => {
       <View
         style={stylesCSS.bgMenu}>
         <Menu
-          style={stylesCSS.bgMenu}
+          style={stylesCSS.SousMenu}
           visible={visible}
           onDismiss={closeMenu}
           anchor={<Button onPress={openMenu} >Show menu</Button>}>

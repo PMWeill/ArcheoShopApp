@@ -2,6 +2,7 @@ import { useContext } from "react";
 import "./Panier.css";
 import { BoutiqueContext } from "../../BoutiqueContext";
 import { MenuContext } from "../../MenuContext";
+import { Text, View } from "react-native";
 const Panier = () => {
     const boutiqueContext = useContext(BoutiqueContext);
     const menuContext = useContext(MenuContext);
@@ -23,19 +24,18 @@ const Panier = () => {
     }
 
     return (
-        <div className="backPanier">
-            <div className="panier">
-                <h2>Votre panier</h2>
-                <div className="close" onClick={
+        <View className="backPanier">
+            <View className="panier">
+                <Text>Votre panier</Text>
+                <View className="close" onClick={
                     () => {
                         menuContext.fonctDisplayPanier(menuContext.displayPanier)
                     }
-                }>X</div>
+                }>X</View>
 
-                <div>
-                    <ul>
+                <View>
+                    <Text>
                         {
-                            //je boucle sur le tableauy tabPanier qui contient les id de mes articles achetés
                             boutiqueContext.tabPanier.length > 0 ?
 
                                 paniertmp.map((valeur, index) => {
@@ -48,45 +48,45 @@ const Panier = () => {
 
 
                                     return (
-                                        <div key={index} className="cart">
-                                            <img src={url} alt={name} width="100px"></img>
-                                            <div className="placecartname">
-                                                <span className="name">{name}</span>
-                                                <span className="prixU">{priceU}€/unité</span>
-                                            </div >
-                                            <div className="placecartbuy">
-                                                <button
+                                        <View key={index} className="cart">
+                                            <Imgage source={url} alt={name} width="100px"></Imgage>
+                                            <View className="placecartname">
+                                                <Text className="name">{name}</Text>
+                                                <Text className="prixU">{priceU}€/unité</Text>
+                                            </View >
+                                            <View className="placecartbuy">
+                                                <Button
                                                     className="boutonCart"
                                                     disabled={isActiveplus}
-                                                    onClick={() => { boutiqueContext.decrementQte(valeur[0]) }} >+</button>
-                                                <span className="qteAchat">{qteA}</span>
-                                                <button
+                                                    onClick={() => { boutiqueContext.decrementQte(valeur[0]) }} >+</Button>
+                                                <Text className="qteAchat">{qteA}</Text>
+                                                <Button
                                                     className="boutonCart moins"
                                                     onClick={() => {
                                                         boutiqueContext.incrementQte(valeur[0])
                                                     }}
-                                                >-</button>
-                                                <span className="prixT">{priceT}€</span>
-                                            </div>
+                                                >-</Button>
+                                                <Text className="prixT">{priceT}€</Text>
+                                            </View>
 
-                                        </div>
+                                        </View>
                                     )
                                 })
                                 :
-                                <div>Votre panier est actuellement vide</div>
+                                <Text>Votre panier est actuellement vide</Text>
                         }
-                    </ul>
+                    </Text>
 
-                </div>
+                </View>
                 {
                     boutiqueContext.tabPanier.length > 0 ?
-                        <div className="totalCart"> Votre totale : {boutiqueContext.totalPanier} €</div>
+                        <Text className="totalCart"> Votre totale : {boutiqueContext.totalPanier} €</Text>
                         :
                         <></>
                 }
-            </div>
+            </View>
 
-        </div>
+        </View>
     )
 }
 export { Panier }

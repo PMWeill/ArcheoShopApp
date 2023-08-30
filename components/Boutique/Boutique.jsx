@@ -5,18 +5,14 @@ import MyCard from "../Card/Card";
 const stylesBoutique = StyleSheet.create({
     shop: {
         display: "flex",
-        backgroundColor: "red",
-        height:"auto"
-
+        height:"auto",
+        
 
     }
 
 })
 function Boutique(props) {
-    // if (!props.articles) {
-    //     return <Text style={stylesBoutique.shop}>Aucun article disponible</Text>;
-    // }
-
+  
     return (
         <View
             style={stylesBoutique.shop}>

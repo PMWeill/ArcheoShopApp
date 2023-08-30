@@ -24,7 +24,6 @@ import { Boutique } from './components/Boutique/Boutique.jsx';
 
 
 function App(): JSX.Element {
-  // declaration de mes states
   const [stateArticles, setStateArticles] = useState(
     {
       "articles": articles,
@@ -60,16 +59,7 @@ function App(): JSX.Element {
 
     }
   )
-  // function responsive() {
-  //   let orientation; //true =>portrait mobile
-  //   if (window.innerWidth > window.innerHeight) {
-  //     orientation = false;
-  //     // ou utiliser l'event deviceOrientation
-  //   } else {
-  //     orientation = true;
-  //   }
-  //   return orientation;
-  // }
+  
   function burgerButton(disp: boolean) {
     setStateMenu({
       ...stateMenu,
@@ -101,12 +91,10 @@ function App(): JSX.Element {
       }
     })
 
-    //je ajoute l'id de l'article acheté au tableau stateArticles.tabPanier
     const tmpTabPanier = stateArticles.tabPanier;
     tmpTabPanier.push(id)
-    // je réasigne le nvx tableau article modifié à mon stateArticles grâce à sa fonction setStateArticles
     setStateArticles({
-      ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
+      ...stateArticles,
       "articles": articlesTmp,
       "tabPanier": tmpTabPanier
     });
@@ -118,8 +106,6 @@ function App(): JSX.Element {
     let supprIndex: Number;
     stateArticles.tabPanier.find((value, index) => {
       if (value === id) {
-        //je recupére dans mon tableau stateArticles.tabPanier l'indec de l'article à supprimer
-        supprIndex = index;
 
       }
     })
@@ -132,7 +118,6 @@ function App(): JSX.Element {
 
       if (index === id) {
         valeur.qte > 0 && ++valeur.qte;
-        // ou  valeur.qte === 0 ? valeur.qte = 0 : valeur.qte -= 1;
 
       }
     })
@@ -141,7 +126,7 @@ function App(): JSX.Element {
 
     setStateArticles(
       {
-        ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
+        ...stateArticles,
         "articles": articlesTmp,
         "tabPanier": tmpTabPanier
       }
@@ -173,8 +158,9 @@ function App(): JSX.Element {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.bgScrollView}
           >
-            <NavMenu></NavMenu>
             <View style={styles.bgScrollView}>
+            <NavMenu></NavMenu>
+            
               
               <Boutique articles={stateArticles.articles}></Boutique>
             </View >
