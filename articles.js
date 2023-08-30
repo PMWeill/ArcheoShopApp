@@ -72,4 +72,4 @@ const articles = [
         description: "Pour vos amis"
     }
 ]
-export  {articles}
+export  {articles};

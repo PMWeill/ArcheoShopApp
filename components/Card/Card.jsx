@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import {BoutiqueContext} from '../../BoutiqueContext';
 import { Avatar, Button, Card, Text } from 'react-native-paper';
 import { Image, StyleSheet, View } from 'react-native';
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 function MyCard(props) {
   const boutiqueContext = useContext(BoutiqueContext);

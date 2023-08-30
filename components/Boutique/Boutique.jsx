@@ -40,4 +40,4 @@ function Boutique(props) {
 }
 
 
-export { Boutique }
+export { Boutique };

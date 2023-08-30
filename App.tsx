@@ -1,12 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
 import React, { useState } from 'react';
-import { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -14,14 +7,14 @@ import {
   StyleSheet,
   Text,
   useColorScheme,
-  View,
+  View
 } from 'react-native';
-import { articles } from './articles.js';
-import { MenuContext } from './MenuContext.js';
-import  {BoutiqueContext}  from './BoutiqueContext.js';
-import {NavMenu} from './components/NavMenu/NavMenu.js';
-import  {Boutique}  from './components/Boutique/Boutique.jsx';
-import { Panier } from './components/Panier/Panier.jsx';
+import { articles } from './articles';
+import { MenuContext } from './MenuContext';
+import  {BoutiqueContext}  from './BoutiqueContext';
+import { NavMenu } from './components/NavMenu/NavMenu';
+import  { Boutique }  from './components/Boutique/Boutique';
+import { Panier } from './components/Panier/Panier';
 
 function App(): JSX.Element {
   const [stateArticles, setStateArticles] = useState(
@@ -160,10 +153,10 @@ function App(): JSX.Element {
           >
             <View style={styles.bgScrollView}>
             <NavMenu></NavMenu>
-            
+             <Panier></Panier>
+            <Boutique articles={stateArticles.articles}></Boutique>
               
-              <Boutique articles={stateArticles.articles}></Boutique>
-              <Panier></Panier>
+             
             </View >
           </ScrollView>
 
@@ -184,4 +177,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export {App};
+export { App };

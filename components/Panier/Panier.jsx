@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import React,{ useContext } from "react";
 
 import { BoutiqueContext } from "../../BoutiqueContext";
 import { MenuContext } from "../../MenuContext";
-import { Text, View } from "react-native";
+import {Button} from "react-native-paper";
+import { Text, View, Image  } from "react-native";
 const Panier = () => {
     const boutiqueContext = useContext(BoutiqueContext);
     const menuContext = useContext(MenuContext);
@@ -20,69 +21,64 @@ const Panier = () => {
             }
 
         })
-        console.dir(paniertmp);
+      
     }
 
     return (
-        <View className="backPanier">
-            <View className="panier">
+        <View>
                 <Text>Votre panier</Text>
-                
+
 
                 <View>
-                    <Text>
-                        {
-                            boutiqueContext.tabPanier.length > 0 ?
 
-                                paniertmp.map((valeur, index) => {
-                                    let name = boutiqueContext.articles[valeur[0]].name;
-                                    let priceU = boutiqueContext.articles[valeur[0]].price
-                                    let priceT = boutiqueContext.articles[valeur[0]].price * valeur[1];
-                                    let qteA = valeur[1]
-                                    let url = boutiqueContext.articles[valeur[0]].url
-                                    let isActiveplus = boutiqueContext.articles[valeur[0]].qte === 0 ? true : false
+                    {
+                        boutiqueContext.tabPanier.length > 0 ?
 
+                            paniertmp.map((valeur, index) => {
+                                let name = boutiqueContext.articles[valeur[0]].name;
+                                let priceU = boutiqueContext.articles[valeur[0]].price
+                                let priceT = boutiqueContext.articles[valeur[0]].price * valeur[1];
+                                let qteA = valeur[1]
+                                let url = boutiqueContext.articles[valeur[0]].url
+                                let isActiveplus = boutiqueContext.articles[valeur[0]].qte === 0 ? true : false
 
-                                    return (
-                                        <View key={index} className="cart">
-                                            <Imgage source={url} alt={name} width="100px"></Imgage>
-                                            <View className="placecartname">
-                                                <Text className="name">{name}</Text>
-                                                <Text className="prixU">{priceU}€/unité</Text>
-                                            </View >
-                                            <View className="placecartbuy">
-                                                <Button
-                                                    className="boutonCart"
-                                                    disabled={isActiveplus}
-                                                    onClick={() => { boutiqueContext.decrementQte(valeur[0]) }} >+</Button>
-                                                <Text className="qteAchat">{qteA}</Text>
-                                                <Button
-                                                    className="boutonCart moins"
-                                                    onClick={() => {
-                                                        boutiqueContext.incrementQte(valeur[0])
-                                                    }}
-                                                >-</Button>
-                                                <Text className="prixT">{priceT}€</Text>
-                                            </View>
-
+                                return (
+                                    <View key={index} >
+                                        <Image source={url} ></Image>
+                                        <View >
+                                            <Text>{name}</Text>
+                                            <Text >{priceU}€/unité</Text>
+                                        </View >
+                                        <View>
+                                            <Button
+                                                disabled={isActiveplus}
+                                                onPress={() => { boutiqueContext.decrementQte(valeur[0]) }} >+</Button>
+                                            <Text>{qteA}</Text>
+                                            <Button
+                                                onPress={() => {
+                                                    boutiqueContext.incrementQte(valeur[0])
+                                                }}
+                                            >-</Button>
+                                            <Text >{priceT}€</Text>
                                         </View>
-                                    )
-                                })
-                                :
-                                <Text>Votre panier est actuellement vide</Text>
-                        }
-                    </Text>
+
+                                    </View>
+                                )
+                            })
+                            :
+                            <Text>Votre panier est actuellement vide</Text>
+                    }
+
 
                 </View>
                 {
                     boutiqueContext.tabPanier.length > 0 ?
-                        <Text className="totalCart"> Votre totale : {boutiqueContext.totalPanier} €</Text>
+                        <Text> Votre totale : {boutiqueContext.totalPanier} €</Text>
                         :
                         <></>
                 }
-            </View>
-
+           
         </View>
     )
 }
-export { Panier };
+export { Panier }
