@@ -1,0 +1,131 @@
+.card {
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 50px;
+    width: 90%;
+    height: 70vh;
+    margin: 10px;
+    
+}
+
+.card img {
+    width: 100%;
+    border-radius: 20px;
+    transition: transform .2s;
+}
+.card img:hover {
+    width: 100%;
+    border-radius: 20px;
+    transform: scale(1.2);
+}
+
+
+.nom-article {
+    font-size: 6vw;
+    font-weight: 600;
+}
+
+.produit {
+    display: flex;
+    margin: 0 20px;
+    font-size: 4vw;
+    font-weight: 500;
+    gap: 30px;
+}
+
+.prdDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.promo {
+    font-size: 2rem;
+    color: red;
+    font-weight: 900;
+}
+.cp {
+    font-size: 3.5vw;
+    font-weight: 600;
+    margin: 0 20px;
+}
+@media screen and (min-width:769px) {
+    .card {
+        color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        border-radius: 50px;
+        width: 40%;
+        height: 70vh;
+        margin: 10px;
+        
+    }
+
+    .nom-article {
+        font-size: 4vw;
+        font-weight: 600;
+    }
+    .produit {
+        font-size: 3vw;
+        font-weight: 400;
+        gap: 30px;
+    }
+    .promo {
+        font-size: 3vw;
+        font-weight: 900;
+    }
+    .cp {
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+}
+@media screen and (min-width:1025px) {
+    .nom-article {
+        font-size: 3.5vw;
+        font-weight: 600;
+    }
+    .produit {
+        font-size: 2.5vw;
+        font-weight: 400;
+        gap: 100px;
+    }
+    .promo {
+        font-size: 2.5vw;
+        font-weight: 900;
+    }
+    .cp {
+        font-size: 2vw;
+        font-weight: 400;
+    }
+}
+@media screen and (min-width:1200px) {
+    .nom-article {
+        font-size: 3vw;
+        font-weight: 600;
+    }
+    .produit {
+        font-size: 2vw;
+        font-weight: 400;
+        gap: 100px;
+    }
+    .promo {
+        font-size: 2vw;
+        font-weight: 900;
+    }
+    .cp {
+        font-size: 1.5vw;
+        font-weight: 400;
+    }
+}

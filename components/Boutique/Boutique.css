@@ -1,0 +1,22 @@
+.shop{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10vh;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+@media screen and (min-width:769px) {
+    .shop{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10vh;
+        align-content: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
